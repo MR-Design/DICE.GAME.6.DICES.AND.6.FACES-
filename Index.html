@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>  Project one MOHAMMED REDA MEDHI. </title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
+
+        
+    </head>
+    <body>
+        <div class="container-fluid" id="wrap"> 
+            <h1>Dice Game</h1>
+            <h2>Hello there!</h2>
+            
+           
+            
+            <p>
+                 here's the Rulles.
+            </p>
+            
+            
+            <p>
+                Numer Of Players is 2.<br/>
+                
+                Player 2 >Rulles.<br/>
+                -choose if he wanna guess or not <br/>
+                
+                -1- Choose To Not Guess<br/>
+                 a- His Score Will Stay As Current Score @ Game Start at Total Points of 0Pts <br/>
+                 NOT @in this Version Player 2 Is Forced To Guess.<br/>
+                
+                -2-If Choose to Guess Points will based as After.<br/>
+                
+                  --1 Number Match = -50 Pts.<br/>
+                  --2 Number Match =  00 Pts.<br/>
+                  --3 Number Match =  25% Player1 Pts.<br/>
+                  --4 Number Match =  50% Player1 Pts.<br/>
+                  --5 Number Match =  75% Player1 Pts.<br/>
+                  --6 Number Match = 100% Player1 Pts.<br/>
+                  --0 Number Match = -100% Player1 Pnts<br/>
+                  Note@ Points are earned Based on Curent<br/>
+                                Player 1 >Rulles.<br/>
+                 points will be based on the die face.<br/>
+                    1=0 Pts,  2=5 Pts, 3=10 Pts, 4=15 Pts, 5=20 Pts, 6=100 Pts.<br/>
+                 @Next Version Getting  6 of 6 faces will have a jackpot = multiplay his Total points to a Random Number between (5 to 7)<br/>
+                  Game ends at anytime a player hit 10000 Pts.<br/>
+            </p>
+            
+  
+            <button class="btn btn-primary btn-lg btn-block" onclick="guessYes()">Player 1</button>
+            <button class="btn btn-secondary btn-lg btn-block" onclick="guessNo()">Player 2</button>
+
+          
+            <script src="main.js"> </script>
+
+    </div>
+    </body>
+</html>
