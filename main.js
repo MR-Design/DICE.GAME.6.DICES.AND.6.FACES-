@@ -34,7 +34,16 @@
  ** Game ends at anytime a player hit 10000 Pts.
 */
 
-let player1 = 0; let player2 = 0; 
+// playGame();
+
+// function playGame() {
+//     // global variables
+//     // step 1
+//     // step 2
+//     // step 3
+// }
+
+let player1 = 0; let player2 = 0; let player2Gusses;
   player1 = prompt("Player 1:Enter Your Name Please ");
   player2 = prompt("Player 2:Enter Your Name Please ");
 
@@ -45,14 +54,14 @@ let player1 = 0; let player2 = 0;
 
 function guessedYes() {
 
-    let player2Gusses =  prompt(player2 +" Guess 6 numbers you think " +player1 +" will get from");
+     player2Gusses =  prompt(player2 +" Guess 6 numbers you think " +player1 +" will get from");
     player2Gusses = player2Gusses.split("");
     return player2Gusses;
     console.log(player2Gusses);
     console.log(typeof(player2Gusses));  
 }
 
- let player2Gusses =  guessedYes();
+  player2Gusses =  guessedYes();
 
 function chekingGussesAndDiceRolles(){
   let ifMatch; let numberOfSides =6;
@@ -86,14 +95,15 @@ function chekingGussesAndDiceRolles(){
 //guessedNo();
 // let rollResuls =" ";
 // let rollPoints ;
+let pointSum 
 
-
+let numberOfSides = 6; let roll; let rollHoler = [];
 function diceRolls() {
-        let roll; let numberOfSides =6; let rollHoler =[]; let pointSum = 0; let points = 0;
+    let pointSum = 0; let points = 0;
     for (let i = 1; i < numberOfSides+1; i++) {
           roll = Math.ceil(Math.random()*6);  
           rollHoler.push(roll);
-          alert( player1 + " you Got " + roll );
+          alert( player1 + "  you Got " + roll );
                switch (roll) {
                         case 1:
                         points = 0;
@@ -122,7 +132,7 @@ function diceRolls() {
                         default:
                         break;
                 };    
-        pointSum += points
+        pointSum += points; ////////////
         console.log(roll);  
         console.log(typeof(roll));    
 
@@ -134,8 +144,117 @@ function diceRolls() {
 }
 diceRolls();
 
+// compare Rolls and  Player2Gusses
 
 function comparingResults() {
+ let counter = 0; let pointSum2 = 0; let points2 =0;
+
+ // let x=[1,2,3,4]
+ // let y=[5,2,1,6]
+
+    for (let i=0; i<numberOfSides; i++){
+        for(let j = 0; j<numberOfSides; j++){
+            if (rollHoler[i] == player2Gusses[j]){
+                counter++
+            };
+        }        
+
+  
     
+    switch (counter) {
+        case 0:
+        points2 = -(pointSum);
+        break;
+
+        case 1:
+        points2 = -50;
+        break;
+
+        case 2:
+        points2 = 0;
+        break;
+            
+        case 3:
+        points2 = pointSum * 25;
+        break;
+
+        case 4:
+        points2 = pointSum * 5;
+        break;
+        
+        case 5:
+        points2 = pointSum * 75;
+        break;
+
+        case 6:
+        points2  = pointSum;
+        break;
+        
+        default:
+        break;
+    };
+    alert(" Awsome You Got " + counter + " Matches ") ; 
+    console.log("counter", counter);  
+    console.log("rollholder", rollHoler);
+
+
+    
+    
+console.log("ponts sum 2",pointSum2);
+alert("  You Got " + pointSum2 + "  PTS") ; 
 }
-//comparingResults();
+pointSum2 += points2;
+}
+
+
+comparingResults();
+
+
+
+let player1Score; let player2Score; 
+function theWinner(){
+let score = 0 ;
+player1Score += pointSum;
+player2Score += pointSum2;
+
+alert( player1 + " your Score are " + player1Score + " Points " + "  " + " And "+ player1 +" Scored" +player2Score +"Points") ; 
+
+if (player1Score>999){
+    alert( player1 + "  Win")
+} 
+if (player2Score>999){
+    alert( player2 + "  Win")
+} 
+
+if ((player1Score || playerScore)>999){
+
+    return  
+};
+
+
+};
+theWinner();
+
+
+// diceRolls();
+
+// // compare Rolls and  Player2Gusses
+
+// function comparingResults() {
+//  let numberOfSides = 6;
+// let counter = 0; let p2matchs = 0 ; let roll = "111222"; 
+// //roll = roll[0];
+// let player2Gusses = "111222";
+
+//     for (i=0; i<numberOfSides; i++){
+
+//        if (roll[i] == player2Gusses[i]){
+//             counter++;          
+//     };
+
+    
+// };
+// console.log(counter);  
+// console.log(typeof(p2matchs));
+// };
+// comparingResults();
