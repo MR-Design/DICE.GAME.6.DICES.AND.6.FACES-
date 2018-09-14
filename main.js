@@ -34,27 +34,22 @@
  ** Game ends at anytime a player hit 10000 Pts.
 */
 
-// playGame();
-
-// function playGame() {
-//     // global variables
-//     // step 1
-//     // step 2
-//     // step 3
-// }
-
-let player1 = 0; let player2 = 0; let player2Gusses;
-  player1 = prompt("Player 1:Enter Your Name Please ");
-  player2 = prompt("Player 2:Enter Your Name Please ");
+// playGame(); ////Master Function
+playGame()
+function playGame() {
+    
+    let player1 = 0; let player2 = 0; let player2Gusses; let pointSum; let numberOfSides = 6; let roll; let rollHoler = [];
+    let score = 0 ; let player1Score; let player2Score; 
+    player1 = prompt("Player 1:Enter Your Name Please ");
+    player2 = prompt("Player 2:Enter Your Name Please ");
 
   alert("Peerfect :" + player2 + " Goes First");
 
-//     // document.getElementById("guess").innerHTML //= true;
-//     // document.getElementById("notGuess").innerHTML  //= false;
+
 
 function guessedYes() {
 
-     player2Gusses =  prompt(player2 +" Guess 6 numbers you think " +player1 +" will get from");
+    player2Gusses =  prompt(player2 +" Guess 6 numbers you think " +player1 +" will get from");
     player2Gusses = player2Gusses.split("");
     return player2Gusses;
     console.log(player2Gusses);
@@ -64,14 +59,14 @@ function guessedYes() {
   player2Gusses =  guessedYes();
 
 function chekingGussesAndDiceRolles(){
-  let ifMatch; let numberOfSides =6;
-    for (let i = 1; i < numberOfSides+1; i++) {
+    let ifMatch; let numberOfSides =6;
+        for (let i = 1; i < numberOfSides+1; i++) {
 
-        ifMatch = [];
-        ifMatch.push(player2Gusses);
-        
-        console.log(player2Gusses);
-        console.log(typeof(player2Gusses));    
+            ifMatch = [];
+            ifMatch.push(player2Gusses);
+            
+    console.log(player2Gusses);
+    console.log(typeof(player2Gusses));    
     };
 
     alert("Alright you choose :" + player2Gusses);
@@ -80,11 +75,7 @@ function chekingGussesAndDiceRolles(){
     
 
     for (let i = 0; i < player2Gusses.length-1; i++) {
-        counter =[];
-
-
-        /// i am here ..... Checking the two rolls
-    }
+        counter =[];    }
   };
  chekingGussesAndDiceRolles();
 
@@ -95,9 +86,7 @@ function chekingGussesAndDiceRolles(){
 //guessedNo();
 // let rollResuls =" ";
 // let rollPoints ;
-let pointSum 
 
-let numberOfSides = 6; let roll; let rollHoler = [];
 function diceRolls() {
     let pointSum = 0; let points = 0;
     for (let i = 1; i < numberOfSides+1; i++) {
@@ -140,14 +129,16 @@ function diceRolls() {
         console.log(typeof(rollHoler));
     }
     console.log(pointSum)
-    alert( player1 + " here's your total Point's " + pointSum );
+    alert( player1 + " here's your total Points " + pointSum );
 }
 diceRolls();
 
 // compare Rolls and  Player2Gusses
 
+let pointSum2 =0; let points2 =0;
+
 function comparingResults() {
- let counter = 0; let pointSum2 = 0; let points2 =0;
+ let counter = 0; pointSum2 = 0;  points2 =0;
 
  // let x=[1,2,3,4]
  // let y=[5,2,1,6]
@@ -159,11 +150,12 @@ function comparingResults() {
             };
         }        
 
-  
+    };
     
+    counter = parseInt(counter, 10);
     switch (counter) {
         case 0:
-        points2 = -(pointSum);
+        points2 = -100;
         break;
 
         case 1:
@@ -175,65 +167,72 @@ function comparingResults() {
         break;
             
         case 3:
-        points2 = pointSum * 25;
+        points2 = 5;
         break;
 
         case 4:
-        points2 = pointSum * 5;
+        points2 = 10;
         break;
         
         case 5:
-        points2 = pointSum * 75;
+        points2 = 15;
         break;
 
         case 6:
-        points2  = pointSum;
+        points2  = 100;
         break;
         
         default:
         break;
     };
+
+    pointSum2 += points2; // NaN error ??
     alert(" Awsome You Got " + counter + " Matches ") ; 
     console.log("counter", counter);  
     console.log("rollholder", rollHoler);
 
+    console.log(typeof("counter",counter));  
+
 
     
-    
-console.log("ponts sum 2",pointSum2);
-alert("  You Got " + pointSum2 + "  PTS") ; 
-}
-pointSum2 += points2;
-}
+           
+        
+        console.log("ponts sum 2",pointSum2);
+        alert("  You Got " + pointSum2 + "  PTS") ; 
 
+        }
 
+        
 comparingResults();
 
 
 
-let player1Score; let player2Score; 
 function theWinner(){
-let score = 0 ;
-player1Score += pointSum;
-player2Score += pointSum2;
+        player1Score += pointSum;
+        player2Score += pointSum2;
 
-alert( player1 + " your Score are " + player1Score + " Points " + "  " + " And "+ player1 +" Scored" +player2Score +"Points") ; 
+        alert( player1 + " your Score are " + player1Score + " Points " + "  " + " And "+ player1 +" Scored" +player2Score +"Points") ; 
 
-if (player1Score>999){
-    alert( player1 + "  Win")
-} 
-if (player2Score>999){
-    alert( player2 + "  Win")
-} 
+            if (player1Score > 999){
+                alert( player1 + "  Win")
+            } 
+            if (player2Score > 999){
+                alert( player2 + "  Win")
+            } 
 
-if ((player1Score || playerScore)>999){
+            if ((player1Score || player2Score)>999){
+                console.log(typeof("player1Score",player1Score));  
+                console.log(typeof("playerScore",player2Score)); 
 
-    return  
+        // return  
 };
 
 
 };
 theWinner();
+
+
+}
 
 
 // diceRolls();
